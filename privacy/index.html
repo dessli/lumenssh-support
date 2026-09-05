@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy Policy · LumenSSH</title><style>body{font:17px/1.65 system-ui,sans-serif;max-width:800px;margin:0 auto;padding:40px 24px;color:#232c36;background:#fafaf8}nav{display:flex;gap:24px;flex-wrap:wrap;border-bottom:1px solid #d1d5db;padding-bottom:20px}a{color:#17599d}h1{font-size:2.1rem;line-height:1.2}h2{margin-top:2em}p,li{max-width:72ch}footer{border-top:1px solid #d1d5db;margin-top:48px;padding-top:20px;font-size:14px}code{overflow-wrap:anywhere}</style></head><body><nav aria-label="Main"><a href="../index.html">LumenSSH Support</a><a href="../privacy/">Privacy Policy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a></nav><main><h1>LumenSSH Privacy Policy</h1>
+<p>Last updated: September 5, 2026</p>
+<p>LumenSSH is a local-first macOS SSH workbench. It has no advertising, tracking, or third-party analytics. Most data remains on the Mac or in the user&#x27;s private iCloud database. Terminal AI is optional and contacts only the provider the user configures after explicit consent.</p>
+<h2>Data stored on this Mac</h2>
+<ul><li>Passwords, private keys, key passphrases, AI API keys, security-scoped bookmark   material, and transcript encryption keys are stored in the non-synchronizing   macOS Keychain.</li><li>Host-key pins are stored in the local-only SwiftData store. They are not stored   in Keychain and do not sync with iCloud.</li><li>Session, transfer, snippet-execution, and diagnostic summaries are stored   locally. Local telemetry is rolled up and deleted according to the configured   retention period.</li><li>Optional terminal transcripts are encrypted with AES-GCM and stored locally.   Capture is disabled by default and recording failures are shown in the app.</li></ul>
+<h2>Data that may sync with iCloud</h2>
+<p>When “Sync non-secret metadata with iCloud” is enabled, Apple&#x27;s private CloudKit container `iCloud.xyz.dess.LumenSSH` may sync server names, hosts, ports, groups, tags, notes, jump-host relationships, public identity metadata, snippets, tunnel presets, and dashboard presets.</p>
+<p>Snippet bodies are user content and may contain secrets. LumenSSH warns before saving content that resembles a private key, token, or password. Credentials, private-key bytes, passphrases, Keychain bindings, host-key pins, histories, transfer details, and terminal transcripts do not sync.</p>
+<h2>SSH, SFTP, tunnels, and monitoring</h2>
+<p>SSH, SFTP, and tunnel traffic goes to hosts and ports selected by the user. Tunnels bind to loopback by default. Linux monitoring uses read-only commands over the existing SSH connection; it does not install an agent or run `sudo`.</p>
+<p>Offline GeoIP uses the bundled DB-IP City Lite database. LumenSSH does not send queried IP addresses to DB-IP or another geolocation provider.</p>
+<h2>Terminal AI and third-party providers</h2>
+<p>Terminal AI supports OpenAI-compatible, Anthropic-compatible, and custom HTTPS services. Before the first request to a provider origin, LumenSSH displays the destination and asks for explicit consent.</p>
+<p>When enabled, LumenSSH may send:</p>
+<ul><li>AI chat messages;</li><li>commands proposed by the AI; and</li><li>bounded, control-sequence-stripped output from commands the user approves.</li></ul>
+<p>Terminal scrollback, manually typed commands, server addresses, usernames, and Keychain secrets are not uploaded automatically. Every AI command requires separate user confirmation; no command is executed automatically.</p>
+<p>Requests to the official `api.openai.com` endpoint include `store: false`. Retention and deletion for OpenAI, Anthropic, or a custom compatible service are still controlled by that service and the user&#x27;s account with it. Changing the provider origin requires new consent. Consent can be withdrawn in Settings, which prevents new requests but cannot delete data already held by a provider.</p>
+<h2>Files and diagnostics</h2>
+<p>LumenSSH reads an OpenSSH configuration, private key, or transfer directory only after the user selects it. Exported diagnostics contain aggregate runtime state and redacted errors; they exclude credentials, host names, keys, command output, terminal bytes, and IP addresses.</p>
+<h2>Retention and deletion</h2>
+<p>Settings provides controls to remove local application data and credentials and to delete CloudKit-synchronized records. Purchase history and entitlements are managed by Apple and are not removed when local data is deleted. Provider-side AI data must be deleted through the selected provider.</p>
+<h2>Contact and support</h2>
+<p>Privacy policy: https://dessli.github.io/lumenssh-support/privacy/</p>
+<p>Support: https://dessli.github.io/lumenssh-support/</p>
+<p>Do not include API keys, private keys, passwords, host names, IP addresses, or terminal output in a public support issue. </p></main><footer>LumenSSH for macOS · Updated September 5, 2026</footer></body></html>
